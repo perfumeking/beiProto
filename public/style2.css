@@ -1,0 +1,658 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Nunito+Sans:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+/* 헤더 부분 */
+header {
+  /* 상단바 고정위해 필수적인 요소들 */
+  position: fixed;
+  top: 0;
+  z-index: 300; /*  아래에서 등장하는 레이아웃의 겹침 현상을 막기 위해 z-index값을 높게 설정해서 화면 앞으로 노출되게 만듭니다. */
+  background-color: rgb(255, 255, 255);
+
+  border-bottom: rgb(199, 199, 199) 1px solid;
+  width: 100%;
+  height: 60px;
+  /*  overflow: hidden; */
+}
+header .navWrap {
+  width: 1000px;
+  margin: 0 auto;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+header .navWrap .navLeft {
+  flex: 1;
+}
+header .navWrap .navLeft > a > img {
+  width: 70px;
+  height: 40px;
+  line-height: 50px;
+  margin-top: 10px;
+}
+/* header .navWrap .navLeft h1 {
+  line-height: 50px;
+  font-size: 50px;
+  color: rgb(247, 150, 81);
+  text-shadow: 4px 2px 2px lightgray;
+  letter-spacing: 7px;
+} */
+header .navWrap .navCenter {
+  flex: 8;
+  font-family: "Noto Sans KR", sans-serif;
+}
+header .navWrap .navCenter > ul {
+  display: flex;
+  justify-content: center;
+}
+header .navWrap .navCenter > ul > li {
+  margin: 0 25px;
+  line-height: 60px;
+  font-size: 15px;
+  transition: border 0.4s;
+  cursor: pointer;
+}
+header .navWrap .navCenter > ul > li > a,
+header .navWrap .navCenter > ul > li {
+  color: rgb(102, 101, 101);
+  transition: 0.7s;
+}
+header .navWrap .navCenter > ul > li:hover > a {
+  color: rgb(67, 123, 226);
+}
+header .navWrap .target {
+  position: absolute;
+  border-bottom: 3px solid;
+  transition: 0.3s ease;
+  pointer-events: none;
+}
+header .navWrap .navRight ul {
+  display: flex;
+  justify-content: flex-end;
+}
+header .navWrap .navRight ul li {
+  margin: 0 5px;
+  line-height: 60px;
+  font-size: 12px;
+}
+header .navWrap .navRight ul li a:not([class="free"]) {
+  color: rgb(92, 92, 92);
+}
+/* header .navWrap .navRight ul li a:not([class="free"]):hover {
+  font-weight: bold;
+} */
+header .navWrap .navRight ul .free {
+  background: rgb(67, 123, 226);
+  border-radius: 20px;
+  height: 35px;
+  width: 120px;
+  margin: 10px 0;
+  display: block;
+  line-height: 35px;
+  text-align: center;
+  font-size: 13.5px;
+  font-weight: bold;
+  transition: box-shadow 0.5s;
+  color: white;
+}
+header .navWrap .navRight ul .free:hover {
+  box-shadow: 2px 2px rgb(224, 224, 224);
+}
+
+/* 서브 네브 */
+.subNav {
+  width: 100%;
+  margin-top: 60px;
+  position: relative;
+  border-bottom: rgb(199, 199, 199) 1px solid;
+  display: none;
+  letter-spacing: -1px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.subNav::before {
+  overflow: hidden;
+  display: block;
+  background: #faf7f9;
+
+  /* 필수적인 요소들 */
+  content: ""; /* before와 꼭 함께하는 요소 */
+  width: 50%;
+  height: 100%; /* width와 height 같이줘야지 색상 생김 */
+  position: absolute; /*밑에 left 줘야하기 때문 */
+  left: 50%; /* 안주면 왼쪽에 붙음*/
+  top: 0;
+}
+.subNav .subNavWrap {
+  width: 1000px;
+  height: 350px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  /* z-index: 10; */
+  position: relative; /* 얘 안 주면 반이 가려져서 나옴 꼭 줘야 함 */
+}
+.subNav .subNavWrap .subNavFirst {
+  width: 330px;
+}
+.subNav .subNavWrap .subNavFirst ul {
+  padding-top: 40px;
+}
+.subNav .subNavWrap .subNavFirst ul li {
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+.subNav .subNavWrap .subNavSecond {
+  background: #faf7f9;
+}
+.subNav .subNavWrap .subNavSecond ul {
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  padding-left: 40px;
+}
+.subNav .subNavWrap .subNavSecond .subNavSecondIcons {
+  display: flex;
+  flex-flow: row wrap;
+}
+.subNav .subNavWrap .subNavSecond .subNavSecondIcons li {
+  background-color: rgb(255, 255, 255);
+  width: 170px;
+  border-radius: 15px;
+  padding: 30px;
+  margin-right: 30px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+.subNav .subNavWrap .subNavFirst p,
+.subNav .subNavWrap .subNavSecond p {
+  margin-bottom: 50px;
+  color: black;
+  font-weight: bold;
+}
+.subNav .subNavWrap .subNavFirst li a,
+.subNav .subNavWrap .subNavSecond li a {
+  color: rgb(61, 61, 61);
+}
+
+/* 커버 부분 */
+.cover {
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  /* background-image: url(https://www.freemoa.net/public/images/mainBackNew.png); */
+  background-image: url(images/backgroundResult.png.jpg);
+}
+.cover .title {
+  font-family: "Gothic A1", sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.cover .title .maintitle {
+  font-size: 80px;
+  letter-spacing: -4px;
+  line-height: 95px;
+}
+.cover .title .maintitle .color {
+  color: rgb(67, 123, 226);
+  font-weight: bold;
+}
+.cover .title .subtitle {
+  margin-top: 30px;
+  font-size: 25px;
+}
+.cover .title .subtitle .bold {
+  font-weight: bolder;
+}
+.cover .icon {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  z-index: 5;
+}
+.cover .qnaBox {
+  position: fixed;
+  width: 300px;
+  height: 500px;
+  border-radius: 7%;
+  background-color: white;
+  z-index: 6;
+  display: none;
+}
+.cover .position {
+  box-shadow: 1px 1px 20px -10px rgb(65, 65, 65);
+  bottom: 50px;
+  right: 50px;
+}
+.cover .qnaBox .closeicon {
+  width: 30px;
+  height: auto;
+  top: 20px;
+  right: 20px; /* 왜 먹는지 전혀 모르겠음 */
+  position: absolute;
+}
+
+/* 메인 콘텐츠 */
+.main {
+  width: 1000px;
+  /* height: 1000px; */
+  margin: 0 auto;
+}
+
+/* 메인 콘텐츠 - 서치바 */
+.mainSearchBar {
+  width: 100%;
+  height: 180px;
+  border-radius: 20px;
+  background-color: rgb(250, 248, 248);
+  display: flex;
+  justify-content: space-around;
+}
+.mainSearchBar .mainSearchBarFirst {
+  width: 660px;
+  height: 100%;
+  padding: 30px;
+  position: relative;
+}
+.mainSearchBar .mainSearchBarFirst input {
+  width: 600px;
+  height: 80px;
+  padding: 30px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px rgb(67, 123, 226);
+  outline: none;
+  transition: 0.1s;
+}
+.mainSearchBar .mainSearchBarFirst input::placeholder {
+  color: rgb(173, 173, 173);
+}
+.mainSearchBar .mainSearchBarFirst .inputSize {
+  font-size: 20px;
+  letter-spacing: -2px;
+}
+.mainSearchBar .mainSearchBarFirst img {
+  width: 40px;
+  height: 43px;
+  position: absolute;
+  right: 8%;
+  top: 30%;
+}
+.mainSearchBar .mainSearchBarFirst .mainSearchBarWords {
+  margin-top: 20px;
+}
+.mainSearchBar .mainSearchBarFirst .mainSearchBarWords ul li {
+  display: inline-block;
+  font-size: 15px;
+  margin-right: 10px;
+  padding: 4px;
+  border: 1px solid rgb(219, 218, 218);
+  border-radius: 13px;
+  background-color: white;
+  color: rgb(109, 109, 109);
+  transition: 0.7s;
+}
+.mainSearchBar .mainSearchBarFirst .mainSearchBarWords ul li:hover {
+  color: rgb(133, 92, 160);
+  border-color: rgb(133, 92, 160);
+  cursor: pointer;
+}
+.mainSearchBar .mainSearchBarSecond {
+  line-height: 180px;
+  color: rgb(109, 109, 109);
+  font-family: "Noto Sans KR", sans-serif;
+}
+.mainSearchBar .mainSearchBarThird {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.mainSearchBar .mainSearchBarThird a {
+  text-align: center;
+  transition: 0.7s;
+  height: 50px;
+  width: 150px;
+  line-height: 50px;
+  font-weight: bold;
+}
+.mainSearchBar .mainSearchBarThird a:hover {
+  box-shadow: 2px 2px rgb(224, 224, 224);
+}
+.mainSearchBar .mainSearchBarThird a:first-child {
+  background-color: rgb(67, 123, 226);
+  border-radius: 5px;
+  color: white;
+  margin-bottom: 10px;
+}
+.mainSearchBarThird a:last-child {
+  color: rgb(67, 123, 226);
+  border-radius: 5px;
+  border: 1px solid rgb(67, 123, 226);
+  background-color: white;
+  margin-top: 10px;
+}
+
+/* 메인 콘텐츠 - 카드*/
+.mainCard {
+  width: 1000px;
+  height: 380px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+  letter-spacing: -1.5px;
+  font-family: "Gothic A1", sans-serif;
+}
+.mainCard .cardFirst {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.mainCard .cardFirst .cardFirst1 {
+  /* background-image: url(https://www.freemoa.net/public/images/mainCardNew1.png); */
+  background-image: url(images/3.png);
+  height: 180px;
+}
+.mainCard .cardFirst .cardFirst2 {
+  /* background-image: url(https://www.freemoa.net/public/images/mainCardNew2.png); */
+  background-image: url(images/2.png);
+  height: 180px;
+}
+.mainCard .cardSecond .cardSecond3 {
+  background-image: url(images/1.png);
+  height: 100%;
+}
+.mainCard .cardFirst .cardSize,
+.mainCard .cardSecond .cardSize {
+  background-size: cover;
+  border-radius: 10px;
+  width: 490px;
+  padding: 30px;
+}
+.mainCard .cardTitle {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 18px;
+  color: rgb(78, 78, 78);
+}
+.mainCard .cardNum {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 45px;
+  font-weight: bold;
+}
+.mainCard .cardSecond .cardContent {
+  margin-top: 30px;
+  margin-bottom: 105px;
+}
+.mainCard .cardSecond a {
+  border-radius: 20px;
+  border: 2.5px solid rgb(145, 163, 124);
+  padding: 13px;
+  color:rgb(78, 78, 78);
+  font-weight: 600;
+}
+.mainCard .cardSecond a .arrow {
+  color:rgb(78, 78, 78);
+}
+
+
+/* 메인 콘텐츠 - 포토폴리오 */
+.mainFindPortfolio {
+  width: 1000px;
+  margin: 130px 0;
+}
+.mainFindPortfolio .PortfolioTitle {
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.mainFindPortfolio .PortfolioTitle div:first-of-type {
+  font-size: 28px;
+  letter-spacing: -1px;
+}
+.mainFindPortfolio .PortofolioContent {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  overflow: hidden;
+}
+.mainFindPortfolio .PortofolioContent .PortofolioCard {
+  margin-right: 13px;
+  width: 220px;
+  cursor: pointer;
+}
+.mainFindPortfolio .PortofolioContent .PortofolioCard .color {
+  color: rgb(129, 162, 224);
+  font-weight: bold;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.mainFindPortfolio .PortofolioCard .PortofolioCardImage {
+  overflow: hidden;
+  border: 1px solid rgb(224, 224, 224);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 300px;
+
+  /* display flex 준 이유는 안 주면 사진과 테두리 사이에 공백 생김 */
+}
+.mainFindPortfolio .PortofolioCard img {
+  transition: 0.7s;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  /* .PortofolioCardImage 주면 안 먹음 */
+}
+.mainFindPortfolio .PortofolioCard img:hover {
+  transform: scale(1.1);
+}
+.mainFindPortfolio .PortofolioCard p {
+  font-size: 13.5px;
+  margin-top: 6px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  letter-spacing: -1px;
+}
+
+/* 푸터 */
+footer {
+  font-size: 13px;
+  margin-top: 150px;
+  width: 100%;
+  border-top: 1px solid rgb(247, 233, 233);
+  letter-spacing: -2px;
+}
+footer .footerTop {
+  width: 100%;
+}
+footer .footerTop .footerContentTop {
+  display: flex;
+  justify-content: space-between;
+}
+footer .footerTop .footerContent .FooterTopWords ul {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+footer .footerTop .footerContent .FooterTopWords ul li {
+  margin-right: 50px;
+}
+footer .footerTop .footerContent .FooterTopIcons a {
+  position: relative;
+  display: inline-block;
+}
+footer .footerTop .footerContent .FooterTopIcons a img {
+  display: flex;
+}
+footer .footerBottom {
+  background-color: rgb(87, 87, 87);
+  width: 100%;
+  padding: 40px 0;
+}
+footer .footerBottom .footerContent .footerBottomWords {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0;
+  align-items: center;
+}
+footer .footerBottom .footerContent .footerBottomWords p,
+h1 {
+  color: white;
+  margin-right: 20px;
+}
+
+footer
+  .footerBottom
+  .footerContent
+  .footerBottomWords
+  p:not([class="noBorder"]) {
+  border-left: 1px solid white;
+  padding-left: 10px;
+}
+footer .footerContent {
+  margin: 0 auto;
+  width: 1000px;
+  padding: 20px 0;
+  align-items: center;
+}
+footer .footerContent div:nth-of-type(3) p {
+  color: rgb(182, 182, 182);
+}
+footer .footerContent div:nth-of-type(2) {
+  margin-top: -10px;
+}
+
+/* 
+1. position 사용시 z-index이라는 z축에 우선순위를 주는 속성
+2. flex: 8;
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+ * { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; }
+.btn {
+  display: inline-block;
+  padding: 0 5px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 4px;
+  height: 37px;
+  line-height: 37px;
+  vertical-align: top;
+  font-size: 12px;
+}
+input[type='text'], input[type='email'], input[type='password'], textarea {
+  border-radius: 4px;
+  height: 37px;
+  padding: 10px;
+}
+.container { width: 100%; height: 100%; }
+@media screen and (min-width: 800px) {
+  .container { width: 800px; margin: 0 auto; }
+}
+.input-group { margin-bottom: 15px; }
+.input-group label { width: 25%; display: inline-block; }
+.input-group input { width: 70%; }
+.half { float: left; width: 50%; margin: 10px 0; }
+#join { float: right; }
+.profile-wrap {
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px 0;
+}
+@media screen and (min-width: 800px) {
+  .profile-wrap { width: 290px; margin-bottom: 0; }
+}
+.profile {
+  text-align: left;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+.user-name { font-weight: bold; font-size: 18px; }
+.count { font-weight: bold; font-size: 18px; }
+.timeline {
+  margin-top: 10px;
+  width: 100%;
+  display: inline-block;
+  border-radius: 4px;
+  vertical-align: top;
+}
+@media screen and (min-width: 800px) { .timeline { width: 500px; } }
+#twit-form {
+  border-bottom: 1px solid silver;
+  padding: 10px;
+  overflow: hidden;
+}
+#img-preview { max-width: 100%; }
+#img-label {
+  float: left;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 12px;
+  height: 37px;
+  line-height: 37px;
+}
+#img { display: none; }
+#twit { width: 100%; min-height: 72px; }
+#twit-btn {
+  float: right;
+  border: none;
+}
+.twit {
+  border-radius: 4px;
+  padding: 10px;
+  position: relative;
+  margin-bottom: 10px;
+}
+.twit-author { display: inline-block; font-weight: bold; margin-right: 10px; }
+.twit-follow {
+  padding: 1px 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.twit-img { text-align: center; }
+.twit-img img { max-width: 75%; }
+.error-message { color: red; font-weight: bold; }
+#search-form { text-align: right; }
+#join-form { padding: 10px; text-align: center; }
+#hashtag-form { text-align: right; }
+footer { text-align: center; }

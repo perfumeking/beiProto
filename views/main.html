@@ -1,0 +1,113 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="cover">
+    <div class="title">
+        <div class="maintitle">
+            <p>"너만의" <br><span class="color">광고</span>를 찾아봐</p>
+        </div>
+        <div class="subtitle">
+            <p><span class="bold">마케터</span>가 되기 위한 <span class="bold">너만의 공간</span></p>
+        </div>
+        <div id="mainImage"></div>
+    </div>
+    <img class="icon position"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo1_o6NPb9aVQ1ch21Tluca2SeadC38AVEeqzrSfsFSFavuOkGIkmlChIkUdyJVudD9vA&usqp=CAU">
+    <div class="qnaBox position">
+        <img class="closeicon"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAV1BMVEX///8jHyAAAAAJAAALAAMNBAdoZmdiYGFmZGRta2sFAABpZ2hwbm8YExRbWFlhXl+dnJweGhsTDQ/T09O0s7M2MzNMSUqHhYbFxMWWlJQXEhNWVFRzcnIz5JTBAAAEQklEQVR4nO2d63aqMBCFBUVEpFatWtu+/3MeKeUUJbsEGEgya3+/XbMyzhWSDIsFIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIEeR026X59X0i6e/XLN3dThNJt+F0iZOPojjG57cJpL+d42NRfCTxxZmOr3ERVRzijbj0dXz4kV7Er+LSrXiNo19WL8LSX1YN6W5UPDUVjKJkLyp9nzxIj1046qWIplPxScGouAgKt+TJhKWKn2LCP5Nn4Q6MeGstQs6KzxYsZd+EZNuzK1qriJJURPSmrWD0sRMR3YfUoGGUSGRUgwXvgSjz5/UhM2kooeKLScGoyATW3I/r0bSQ8Y5qctE7x6vIqvvw3sqlIioCBaN4qt73D84H81pGdTcPnUyDw1ls3fa8ASOOsWIKFIziKVr7TtZoOcnQNhy5aLRai67cGnPWG27FFMqTbuvHL2lQLKIYlG7qe2Eszt8q9nfUDVTQmQVL2i1yvay+KuKolmvoB4EdtZ9rwSzq0kUrcP7rk27SJVJw/n60xR79+6vcWkYGFXQagzVYRdsqlvuZZH6Bjrq0iyGvXbQCJvqlTUbN/Vfwj2JtEYuZ7y5aAZN9Z+nHddB5mXhkPTAWcQzKv0UfCY7FvxwVlwmPYrBmSF2EMSi+SSACLhrIHpuQLFgCkwYoGrBMDHgymQmYNpamd4E7qKBnWbQJdLtVW0WsoKcuWgFTR8tR8y1S0L5hdwJM/9tHK+6QgktHL53swbHY3Fv5gr/yOAZr4KNQo/RDS/ubRZvA5f93wGBjsAbWuR9H/YIxGIQFS2DR+FYx6BisgUVjmy8ytN8RiotWwFg8ns37jqDv8RjoqGBPDrfn3gLTDVAwmCTzC+w7jQrOf9RCANiYtdkGFoM1sLC3FAzQRSssHTW0LNoEFvcHBYOMwZqs21FDtmBJp4r+Pw920eGoYbtoxRfqQ0u2ChS8OyrqRO9dalDNNgadD3NzlmsC1NtQfRyqz6Xq66FNTxN0LKrvS9U/W6h/PlT/jN/rPY1hf9F71L9rU/++dMg776Dqovp9C/V7T2vt+4fde8CwWw3DUdXv46s/iwELvZbzNLhMKDkTpf5cm10M1sBY9PdsIj5fao4tfATa04yq/oyw+nPe8MaFlrP6Q+9bYEf1LBbxRUsld2bU33tSf3dN/f3D8XdIPXdU9feAZe5ye9zd4KkK/ZaGJyo4LhqCMxWgJKczFaQsWOLlXAzZ2SYwZblzVPXzabBbyc8YctKG658TpX7Wl/55bWjm3tiI8Wfm3nrmuYnzvwrfzzz7cv6aaJp9OeH8UgezL00zaKWeAwyl38EMWv1zhPXPgm7N85Z9VH1yVCfzvPXPZH+cqy9frjyYq199G6GY+NsIhctvIyzK71tk+/WE37fI95nT71sQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQo5B8vlDCBniO5qwAAAABJRU5ErkJggg==">
+    </div>
+</div>
+<div class="main">
+    <div class="mainSearchBar">
+        <div class="mainSearchBarFirst">
+            <div>
+                <input type="text" id="" name="" class="inputSize" placeholder="어떤 이미지의 광고를 찾으시나요?" value="">
+            </div>
+            <a href="#"><img
+                    src="data:image/png;base64,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"></a>
+            <div class="mainSearchBarWords">
+                <ul>
+                    <li>상콤함</li>
+                    <li>매혹적</li>
+                    <li>달콤함</li>
+                    <li>청순함</li>
+                    <li>시크함</li>
+                    <li>트렌디함</li>
+                    <li>댄디함</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mainSearchBarSecond">잠깐!</div>
+        <div class="mainSearchBarThird">
+            <a href="#">GM 둘러보기</a>
+            <a href="#">IM 둘러보기</a>
+        </div>
+    </div>
+    <div class="mainCard">
+        <div class="cardFirst">
+            <div class="cardFirst1 cardSize">
+                <p class="cardTitle">누적 광고 금액</p>
+                <p><span class="cardNum">123,456,789,891</span>원</p>
+            </div>
+            <div class="cardFirst2 cardSize">
+                <p class="cardTitle">누적 마케팅 수</p>
+                <p><span class="cardNum">52,321</span>명</p>
+            </div>
+        </div>
+        <div class="cardSecond">
+            <div class="cardSecond3 cardSize">
+                <p class="cardTitle">모집중 마케팅 수</p>
+                <p><span class="cardNum">123</span></p>
+                <p class="cardContent">모집중인 모든 마케팅은<br><strong>기업</strong>이 선택합니다.</p>
+                <a href="#">모집 마케팅 보러가기 <span class="arrow">&rarr;</span></a>
+            </div>
+        </div>
+    </div>
+    <div class="mainFindPortfolio">
+        <div class="PortfolioTitle">
+            <div>등록된 게시물로 마케터 찾기</div>
+            <div><a href="#">전체보기 &rarr;</a></div>
+        </div>
+        <div class="PortofolioContent">
+            <div class="PortofolioCard">
+                <div class="PortofolioCardImage">
+                    <!-- <img src="https://pic.freemoa.net/p/65518/223482-224-182-1"> -->
+                    <img src="images/img1.png">
+                </div>
+                <!-- <p>인공지능 기반의 관절 인식 학교 체육 교육 플랫폼 서비스</p> -->
+                <p><span class="color">#상콤함</span> #매혹적 #달콤함 #댄디함 #시크함</p>
+            </div>
+            <div class="PortofolioCard">
+                <div class="PortofolioCardImage">
+                    <!-- <img src="https://pic.freemoa.net/p/64375/219771-224-182-1">  -->
+                    <img src="images/img2.png">
+                </div>
+                <!-- <p>중고차 역경매 플랫폼 ( iOS / Android / admin Web page)</p> -->
+                <p>#상콤함 <span class="color">#매혹적</span> #달콤함 #댄디함 #시크함</p>
+            </div>
+            <div class="PortofolioCard">
+                <div class="PortofolioCardImage">
+                    <!-- <img src="https://pic.freemoa.net/p/63148/216014-224-182-1">  -->
+                    <img src="images/img3.png">
+                </div>
+                <!-- <p>의료기술 크레스콤 웹사이트</p> -->
+                <p>#상콤함 #트랜디함 #달콤함 <span class="color">#댄디함</span> #시크함</p>
+            </div>
+            <div class="PortofolioCard">
+                <div class="PortofolioCardImage">
+                    <!-- <img src="https://pic.freemoa.net/p/50652/172607-234-182-1">  -->
+                    <img src="images/img4.png">
+                </div>
+                <!-- <p>소이랑</p> -->
+                <p>#매혹적 #달콤함 <span class="color">#댄디함</span> #시크함</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}
