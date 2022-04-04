@@ -23,7 +23,7 @@ router.get('/userEnter', isNotLoggedIn, (req, res) => {
 });
 
 router.get('/login', isNotLoggedIn, (req, res) => {
-    res.render('userEnter', { title: '로그인 - BEI' });
+    res.render('login', { title: '로그인 - BEI' });
 });
 
 router.get('/loginE', isNotLoggedIn, (req, res) => {

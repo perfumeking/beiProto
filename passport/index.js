@@ -19,17 +19,17 @@ module.exports = () => {
   kakao();
 };
 
-module.exports = () => {
-  passport.serializeUser((enterprise, done) => {
-    done(null, enterprise.id);
-  });
+// module.exports = () => {
+//   passport.serializeUser((enterprise, done) => {
+//     done(null, enterprise.id);
+//   });
 
-  passport.deserializeUser((id, done) => {
-    User.findOne({ where: { id } })
-      .then(enterprise => done(null, enterprise))
-      .catch(err => done(err));
-  });
+//   passport.deserializeUser((id, done) => {
+//     User.findOne({ where: { id } })
+//       .then(enterprise => done(null, enterprise))
+//       .catch(err => done(err));
+//   });
 
-  local();
-  kakao();
-};
+//   local();
+//   kakao();
+// };

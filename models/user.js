@@ -12,7 +12,7 @@ module.exports = class User extends Sequelize.Model {
         type: Sequelize.STRING(100),
         allowNull: true,
       },
-      nickname: {
+      nick: {
         type: Sequelize.STRING(15),
         allowNull: false,
       },
@@ -29,7 +29,7 @@ module.exports = class User extends Sequelize.Model {
         type: Sequelize.STRING(30),
         allowNull: true,
       },
-      PhoneNumber:{
+      phoneNumber:{
         type: Sequelize.STRING,
         allowNull:false,
         validate: {
