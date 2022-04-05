@@ -50,6 +50,7 @@ router.get('/', (req, res, next) => {
     res.render('main', {
       title: 'BEI',
       twits,
+      user : req.user,
     });
 });
   

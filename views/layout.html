@@ -33,8 +33,7 @@
                 {% if user and user.id %}
                 <div class="navRight">
                     <ul>
-                        <li><a class="user-name">{'환영합니다 ' + user.nick + '님'}</a></li>
-                        <li>|</li>
+                        <li><div class="user-name"><user class="nick"></user></div></li>
                         <li><a id="logout" href="/auth/logout" class="btn">로그아웃</a></a></li>
                         <li><a href="#" class="free">광고 하러가기</a></li>
                     </ul>  
