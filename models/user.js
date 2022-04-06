@@ -14,11 +14,13 @@ module.exports = class User extends Sequelize.Model {
       },
       nick: {
         type: Sequelize.STRING(15),
-        allowNull: false,
+        allowNull: true,
+        defaultValue : '--'
       },
       name: {
         type: Sequelize.STRING(15),
-        allowNull: false,
+        allowNull: true,
+        defaultValue : '--'
       },
       birthday: {
           type: Sequelize.DATE,
@@ -31,12 +33,14 @@ module.exports = class User extends Sequelize.Model {
       },
       phoneNumber:{
         type: Sequelize.STRING,
-        allowNull:false,
-        validate: {
-            notNull: { args: true, msg: "You must enter Phone Number" },
-            len: { args: [11,11], msg: 'Phone Number is invalid' },
-            isInt: { args: true, msg: "You must enter Phone Number" },
-          }
+        allowNull: true,
+        // validate: {
+        //     notNull: { args: true, msg: "You must enter Phone Number" },
+        //     len: { args: [11,11], msg: 'Phone Number is invalid' },
+        //     isInt: { args: true, msg: "You must enter Phone Number" },
+        //   }
+
+        defaultValue : '--'
       },
       kakaoId: {
         type: Sequelize.STRING(30),
