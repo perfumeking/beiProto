@@ -18,21 +18,21 @@ module.exports = class Enterprise extends Sequelize.Model {
       },
       enterprisePhoneNumber:{
         type: Sequelize.STRING,
-        allowNull:false,
-        validate: {
-            notNull: { args: true, msg: "You must enter Phone Number" },
-            len: { args: [11,11], msg: 'Phone Number is invalid' },
-            isInt: { args: true, msg: "You must enter Phone Number" },
-          }
+        allowNull:true,
+        // validate: {
+        //     notNull: { args: true, msg: "You must enter Phone Number" },
+        //     len: { args: [11,11], msg: 'Phone Number is invalid' },
+        //     isInt: { args: true, msg: "You must enter Phone Number" },
+        //   }
       },
       membership: {
         type: Sequelize.BOOLEAN,
-        allowNull: false,
+        allowNull: true,
         defaultValue: false
       },
       enterpriseType: {
         type: Sequelize.INTEGER.UNSIGNED,
-        allowNull: false,
+        allowNull: true,
       },
       
     }, {

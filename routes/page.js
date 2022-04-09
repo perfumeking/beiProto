@@ -10,32 +10,36 @@ res.locals.post=null;
 next();
 });
 
-router.get('/profile', (res,req) => {
-    res.render('profile',{ title : '회원 정보 - BEI'});
+router.get('/userProfile', (res,req) => {
+    res.render('userProfile',{ title : '회원 정보 - BEI'});
 });
 
-router.get('/profileE', (res,req) => {
-    res.render('profileE',{ title : '기업 정보 - BEI'});
-});
-
-router.get('/userEnter', isNotLoggedIn, (req, res) => {
-    res.render('userEnter', { title: '회원 유형 - BEI' });
+router.get('/enterpriseProfile', (res,req) => {
+    res.render('enterpriseProfile',{ title : '기업 정보 - BEI'});
 });
 
 router.get('/login', isNotLoggedIn, (req, res) => {
-    res.render('login', { title: '로그인 - BEI' });
+    res.render('login', { title: '회원 로그인 유형 - BEI' });
 });
 
-router.get('/loginE', isNotLoggedIn, (req, res) => {
-    res.render('userEnter', { title: '기업로그인 - BEI' });
-});
-  
 router.get('/join', isNotLoggedIn, (req, res) => {
-    res.render('join', { title: '회원가입 - BEI' });
+    res.render('join', { title: '회원 가입 유형 - BEI' });
+});
+
+router.get('/userJoin', isNotLoggedIn, (req, res) => {
+    res.render('userJoin', { title: '회원가입 - BEI' });
+});
+
+router.get('/userLogin', isNotLoggedIn, (req, res) => {
+    res.render('userLogin', { title: '회원가입 - BEI' });
+});
+
+router.get('/enterpriseLogin', isNotLoggedIn, (req, res) => {
+    res.render('enterpriseLogin', { title: '기업로그인 - BEI' });
 });
   
-router.get('/joinE', isNotLoggedIn, (req, res) => {
-    res.render('joinE', { title: '기업회원가입 - BEI' });
+router.get('/enterpriseJoin', isNotLoggedIn, (req, res) => {
+    res.render('enterpriseJoin', { title: '기업회원가입 - BEI' });
 });
 
 router.get('/feed', isNotLoggedIn, (req, res) => {
