@@ -12,6 +12,10 @@ module.exports = class Enterprise extends Sequelize.Model {
         type: Sequelize.STRING(100),
         allowNull: true,
       },
+      nick: {
+        type: Sequelize.STRING(30),
+        allowNull: true,
+      },
       enterpriseName: {
         type: Sequelize.STRING(30),
         allowNull: true,

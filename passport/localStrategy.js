@@ -30,7 +30,6 @@ module.exports = () => {
   }));
 };
 } else {
-
 module.exports = () => {
   passport.use(new LocalStrategy({
     usernameField: 'email',
@@ -54,5 +53,4 @@ module.exports = () => {
     }
   }));
 };
-
 }
