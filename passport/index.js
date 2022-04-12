@@ -4,8 +4,9 @@ const kakao = require('./kakaoStrategy');
 const User = require('../models/user');
 const Enterprise = require('../models/enterprise');
 
-if (User) {
+
 module.exports = () => {
+  if(User) {
   passport.serializeUser((user, done) => {
     done(null, user.id);
   });
@@ -18,20 +19,18 @@ module.exports = () => {
 
   local();
   kakao();
-};
 } else {
-module.exports = () => {
   passport.serializeUser((enterprise, done) => {
     done(null, enterprise.id);
   });
 
   passport.deserializeUser((id, done) => {
-    User.findOne({ where: { id } })
+    Enterprise.findOne({ where: { id } })
       .then(enterprise => done(null, enterprise))
       .catch(err => done(err));
   });
 
   local();
-  kakao();
-};
 }
+};
+

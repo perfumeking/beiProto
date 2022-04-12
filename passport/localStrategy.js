@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const User = require('../models/user');
 const Enterprise = require('../models/enterprise')
 
-if(User) {
+
 module.exports = () => {
   passport.use(new LocalStrategy({
     usernameField: 'email',
@@ -13,39 +13,23 @@ module.exports = () => {
   }, async (email, password, done) => {
     try {
       const exUser = await User.findOne({ where: { email } });
-      if (exUser) {
+      const exEnterprise = await Enterprise.findOne({ where : { email } });
+      if (exUser && !exEnterprise) {
         const result = await bcrypt.compare(password, exUser.password);
         if (result) {
           done(null, exUser);
         } else {
           done(null, false, { message: '비밀번호가 일치하지 않습니다.' });
         }
-      } else {
-        done(null, false, { message: '가입되지 않은 회원입니다.' });
-      }
-    } catch (error) {
-      console.error(error);
-      done(error);
-    }
-  }));
-};
-} else {
-module.exports = () => {
-  passport.use(new LocalStrategy({
-    usernameField: 'email',
-    passwordField: 'password',
-  }, async (email, password, done) => {
-    try {
-      const exEnterprise = await Enterprise.findOne({ where: { email } });
-      if (exEnterprise) {
+      } else if (exEnterprise) {
         const result = await bcrypt.compare(password, exEnterprise.password);
         if (result) {
-          done(null, exEnterprise);
+          done(null,exEnterprise);
         } else {
-          done(null, false, { message: '비밀번호가 일치하지 않습니다.' });
+          done(null, false, { message: '비밀번호가 일치하지 않습니다.'});
         }
       } else {
-        done(null, false, { message: '가입되지 않은 기업입니다.' });
+        done(null, false, { message: '가입되지 않은 이메일입니다.' });
       }
     } catch (error) {
       console.error(error);
@@ -53,4 +37,28 @@ module.exports = () => {
     }
   }));
 };
-}
+
+
+// meodule.exports = () => {
+//   passport.use(new LocalStrategy({
+//     usernameField: 'email',
+//     passwordField: 'password',
+//   }, async (email, password, done) => {
+//     try {
+//       const exEnterprise = await Enterprise.findOne({ where: { email } });
+//       if (exEnterprise) {
+//         const result = await bcrypt.compare(password, exEnterprise.password);
+//         if (result) {
+//           done(null, exEnterprise);
+//         } else {
+//           done(null, false, { message: '비밀번호가 일치하지 않습니다.' });
+//         }
+//       } else {
+//         done(null, false, { mssage: '가입되지 않은 기업입니다.' });
+//       }
+//     } catch (error) {
+//       console.error(error);
+//       done(error);
+//     }
+//   }));
+// };
