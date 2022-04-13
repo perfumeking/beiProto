@@ -14,7 +14,7 @@ module.exports = () => {
     try {
       const exUser = await User.findOne({ where: { email } });
       const exEnterprise = await Enterprise.findOne({ where : { email } });
-      if (exUser && !exEnterprise) {
+      if (exUser) {
         const result = await bcrypt.compare(password, exUser.password);
         if (result) {
           done(null, exUser);
@@ -38,7 +38,8 @@ module.exports = () => {
   }));
 };
 
-
+// User.findOne({ where: { email } })
+// Enterprise.findOne({ where : { email } })
 // meodule.exports = () => {
 //   passport.use(new LocalStrategy({
 //     usernameField: 'email',

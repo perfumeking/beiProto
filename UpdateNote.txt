@@ -79,5 +79,10 @@ auth > passport > LocalStrategy 이렇게 받아오는데 ... 도대체 어디�
 > 하지만 유저에서 한번 찾고 없으면 엔터프라이즈에서 찾기 때문에 불필요한 과정 있어서 나중에 케이스문으로 대체해야할듯?
 >> 생각해보니 이러면 안된다. users 테이블이랑 enterprises 테이블이랑 합친거나 다름없음.
 >>> 우선 다른 기능을 만들자. 너무 오래 얽매여 있었음
+다음 필요한 기능은 post.
 
-다음 필요한 기능은 post 
+
+2022-04-13
+패스포트/로컬스트레트지에 if문 조건을 User.findOne({ where: { email }으로 바꾸었다 과연??
+> 안된다. 오류코드 : Cannot read properties of null (reading 'password')
+>> User.findOne이 Null 을 리턴하게 하는 모양이다.
