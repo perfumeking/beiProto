@@ -1,3 +1,4 @@
+// const { dangerouslyDisableDefaultSrc } = require('helmet/dist/types/middlewares/content-security-policy');
 const Sequelize = require('sequelize');
 
 module.exports = class User extends Sequelize.Model {
@@ -72,5 +73,7 @@ module.exports = class User extends Sequelize.Model {
     });
   }
 
-  static associate(db) {}
+  static associate(db) {
+    // db.User.HasMany(db.Info, { foreignKey: 'UserId',sourceKey:'id'});
+  }
 };

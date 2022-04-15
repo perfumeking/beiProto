@@ -1,4 +1,5 @@
 const express = require('express');
+const { Post, User } = require('../models')
 const { isLoggedIn, isNotLoggedIn } = require('./middlewares');
 
 const router = express.Router();
@@ -44,6 +45,10 @@ router.get('/enterpriseJoin', isNotLoggedIn, (req, res) => {
 
 router.get('/feed', isNotLoggedIn, (req, res) => {
     res.render('feed', { title: '피드 - BEI' });
+});
+
+router.get('/upload', isLoggedIn, (req,res) => {
+   res.render('upload', { title: '업로드 - BEI'}) 
 });
 
 
