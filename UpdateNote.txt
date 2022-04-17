@@ -101,3 +101,9 @@ postRouter 작성.
 >응답이 두개 이상 있어서 생기는 오류. alert 창이 뜨고 나서 리다이렉트 해놨지만 안됨
 >>res.send("<script>alert('로그인이 필요합니다.');location.href='login';</script>"); 로 해결! 자바스크립트로 해결할 수 있었다.
 
+
+2022-04-16
+로그인한 상태에서 피드 화면으로 넘어가면 오류 발생 
+>page.js 에서 inNotLoggedIn 부분 수정.(로그인 여부 상관없이 피드 접속 가능)
+nunjucks 사용한 레이아웃에서 user.nick이 안뜨는 이유 >> 중괄호를 한개만 썼었음 ..
+

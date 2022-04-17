@@ -43,7 +43,7 @@ router.get('/enterpriseJoin', isNotLoggedIn, (req, res) => {
     res.render('enterpriseJoin', { title: '기업회원가입 - BEI' });
 });
 
-router.get('/feed', isNotLoggedIn, (req, res) => {
+router.get('/feed', (req, res) => {
     res.render('feed', { title: '피드 - BEI' });
 });
 
