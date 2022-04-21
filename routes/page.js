@@ -5,9 +5,9 @@ const { isLoggedIn, isNotLoggedIn } = require('./middlewares');
 const router = express.Router();
 
 router.use((req,res,next) => {
-res.locals.user=null;
-res.locals.enterprise=null;
-res.locals.post=null;
+res.locals.user=req.user;
+res.locals.enterprise=req.enterprise;
+res.locals.post=req.post;
 next();
 });
 
@@ -50,6 +50,10 @@ router.get('/feed', (req, res) => {
 router.get('/upload', isLoggedIn, (req,res) => {
    res.render('upload', { title: '업로드 - BEI'}) 
 });
+
+router.get('/profile', isLoggedIn, (req,res) => {
+    res.render('profile', { title: '내 정보 - BEI'}) 
+ });
 
 
   
