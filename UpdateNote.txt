@@ -124,6 +124,10 @@ nunjucks 사용한 레이아웃에서 user.nick이 안뜨는 이유 >> 중괄호
 user가 없던 문제는 page.js > router.use 에서 req.user 를 null 로 해놨었다. 왜? 나도모름
 
 
+2022-04-20
+컴 바꿈.
+
+
 2022-04-21
 난데 없는 mysql 에러
 ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)
@@ -132,3 +136,5 @@ mysql 비밀번호 재설정
     mysql -u root -p
     alter user 'root'@'localhost' identified with mysql_native_password by 'my_new_password';
     flush privileges;
+다시 다 복구 완료
+
