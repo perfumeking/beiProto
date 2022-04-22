@@ -545,24 +545,102 @@ import Foundation
 
 //4344
 
-let N:Int = Int(readLine()!)!
-for _ in 1...N {
-    let a = readLine()!
-    let b = a.components(separatedBy: " ")
-    let n = Int(b[0])!
-    var sum = 0
-    for i in 1...n {
-        sum += Int(b[i])!
-    }
-    let aver = sum/n
-    var count:Double = 0
-    for i in 1...n {
-        if aver < Int(b[i])!{
-            count += 1
-        }
-    }
-    let percent:Double = round(count/Double(n) * 100 * pow(10,2))/pow(10, 2)
-    print(percent)
-}
+//import Foundation
+//let N:Int = Int(readLine()!)!
+//for _ in 1...N {
+//    let a = readLine()!
+//    let b = a.components(separatedBy: " ")
+//    let n = Int(b[0])!
+//    var sum = 0
+//    for i in 1...n {
+//        sum += Int(b[i])!
+//    }
+//    let aver = sum/n
+//    var count:Double = 0
+//    for i in 1...n {
+//        if aver < Int(b[i])!{
+//            count += 1
+//        }
+//    }
+//    print(String(format: "%.3f",Float(count)/Float(n)*100)+"%")
+//
+//}
 
-씨발
+
+//4673
+//
+//import Foundation
+//
+//var N : Int = 1
+//func d(n:Int)-> Int{
+//    var result = n
+//    var temp = n
+//    while temp > 0 {
+//        result += temp % 10
+//        temp = temp / 10
+//    }
+//    return result
+//}
+//
+//var arr = [Int] (repeating: 0, count: 10000)
+//
+//for i in 1..<10000{
+//    var temp = i
+//    while true {
+//        temp = d(n:temp)
+//        if temp >= 10000 {
+//            break
+//        }
+//        arr[temp] = arr[temp] + 1
+//    }
+//}
+//
+//for i in 1 ... 9999 {
+//    if arr[i]==0 {
+//        print(i)
+//    }
+//}
+
+
+
+//1065
+
+//import Foundation
+//func d(n:Int) -> Bool{
+//    let N = n
+//    var result : Bool? = nil
+//    if N == 1000 {
+//        result = false
+//        return result!
+//    }
+//    var temp = 0
+//    var index = n
+//    var arr = [Int](repeating: 0, count: 3)
+//    for i in 0...2{
+//        temp = index % 10
+//        index = index / 10
+//        arr[i] = temp
+//    }
+//    if arr[2] == 0 {
+//        result = true
+//    } else if arr[0]-arr[1]==arr[1]-arr[2]{
+//        result = true
+//    } else {
+//        result = false
+//    }
+//    return result!
+//}
+//let a = Int(readLine()!)!
+//var count = 0 ;
+//for i in 1...a{
+//    if d(n:i) {
+//        count += 1
+//    }
+//}
+//print(count)
+
+
+
+//11654
+
+

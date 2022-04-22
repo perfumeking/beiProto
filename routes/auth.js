@@ -62,7 +62,8 @@ router.post('/userLogin', isNotLoggedIn, (req, res, next) => {
       return next(authError);
     }
     if (!user) {
-      return res.redirect(`/?userLoginError=${info.message}`);
+      // return res.redirect(`/?userLoginError=${info.message}`);
+      return res.send("<script>alert('이메일이 없습니다..');location.href='/userLogin';</script>")
     }
     return req.login(user, (loginError) => {
       if (loginError) {

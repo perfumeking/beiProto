@@ -5,8 +5,16 @@ module.exports = class Post extends Sequelize.Model {
         return super.init({
         title : {
             type: Sequelize.STRING(30),
-            allowNull: false,
+            allowNull: true,
         },    
+        content: {
+            type: Sequelize.STRING(500),
+            allowNull: true,
+        },
+        img: {
+            type: Sequelize.STRING(200),
+            allowNull: true,
+        }
         },{
             sequelize,
             timestamps: true,
@@ -18,5 +26,10 @@ module.exports = class Post extends Sequelize.Model {
             collate: 'utf8_general_ci',
         });
     }
-    static associate(db) {}
+    static associate(db) {
+        db.Post.belongsTo(db.User);
+        db.Post.belongsTo(db.Enterprise);
+        db.Post.belongsToMany(db.Hashtag, { through: 'PostHashtag' });
+    }
+
 };

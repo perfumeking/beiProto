@@ -51,5 +51,7 @@ module.exports = class Enterprise extends Sequelize.Model {
     });
   }
 
-  static associate(db) {}
+  static associate(db) {
+    db.Enterprise.hasMany(db.Post);
+    }
 };
