@@ -643,4 +643,17 @@ import Foundation
 
 //11654
 
+//let a = readLine()!
+//print((UnicodeScalar(a)?.value)!)
 
+
+//11720
+
+let N = Int(readLine()!)!
+var string = readLine()!
+var sum = 0
+for i in 0...N {
+    sum += Int(String(i))!
+}
+
+print(sum)

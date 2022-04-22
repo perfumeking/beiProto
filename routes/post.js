@@ -23,9 +23,12 @@ const upload = multer({
     filename(req, file, cb) {
       const ext = path.extname(file.originalname);
       cb(null, path.basename(file.originalname, ext) + Date.now() + ext);
+      console.log(file);
     },
   }),
   limits: { fileSize: 20 * 1024 * 1024 },
+  
+  
 });
 
 router.post('/img', isLoggedIn, upload.single('img'), (req, res) => {
